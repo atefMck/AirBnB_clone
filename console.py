@@ -16,16 +16,18 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """Quit the console"""
+        """
+        Quit the console"""
         return True
 
     def do_EOF(self, arg):
-        """Quit the console using EOF signal"""
-        print("")
+        """
+        Quit the console using EOF signal"""
         return True
 
     def do_create(self, arg):
-        """Creates a new object"""
+        """
+        Creates a new object"""
         if not arg:
             print("** class name missing **")
         if arg not in self.classes:
