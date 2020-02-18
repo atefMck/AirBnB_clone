@@ -45,3 +45,15 @@ class FileStorage():
                 cl = kwar["__class__"]
                 cl = eval(cl)
                 self.new(cl(**kwar))
+
+    def delete(self, key):
+        """ Deletes instance from storage """
+
+        del self.__objects[key]
+
+    def update(self, key, attr, val):
+        """ Updates attribute in instance """
+
+        restriction = {"created_at", "id", "updated_at"}
+        if attr not in restriction:
+            setattr(self.__objects[key], attr, val)
