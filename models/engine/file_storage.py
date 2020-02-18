@@ -22,19 +22,25 @@ class FileStorage():
 		""" adds new object to dict """
 
 		key = obj.__class__.__name__ + "." + obj.id
-		self.__objects[key] = obj.to_dict()
+		self.__objects[key] = obj
 
 	def save(self):
-		""" saves objects to json file """
-
-		json_obj = json.dumps(self.__objects)
-		with open(self.__file_path, 'w') as file:
-			file.write(json_obj)
+		""" serializes __objects to the JSON file """
+		with open(self.__file_path, "w") as file:
+			new_dict = {}
+			for key, value in self.__objects.items():
+				new_dict[key] = value.to_dict()
+			json_text = json.dumps(new_dict)
+			file.write(json_text)
 
 	def reload(self):
 		""" reloads all objects from file """
 
+		from models.base_model import BaseModel
 		if os.path.isfile(self.__file_path):
 			with open(self.__file_path, 'r') as file:
-				json_text = file.read()
-			self.__objects = json.loads(json_text)
+				json_data = json.load(file)
+			for kwar in json_data.values():
+				cl = kwar["__class__"]
+				cl = eval(cl)
+				self.new(cl(**kwar))
