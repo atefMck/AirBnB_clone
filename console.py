@@ -17,12 +17,12 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """
-        Quit the console"""
+        Quit command to exit the program"""
         return True
 
     def do_EOF(self, arg):
         """
-        Quit the console using EOF signal"""
+        Quit command to exit the program"""
         return True
 
     def do_create(self, arg):
@@ -53,5 +53,6 @@ class HBNBCommand(cmd.Cmd):
     #             return
     #     print("** no instance found **")
 
-console = HBNBCommand()
-console.cmdloop()
+if __name__ == '__main__':
+    console = HBNBCommand()
+    console.cmdloop()
