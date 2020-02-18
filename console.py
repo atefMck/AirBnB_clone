@@ -16,12 +16,12 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """Quit the console
-        """
+        """Quit the console"""
         return True
 
     def do_EOF(self, arg):
         """Quit the console using EOF signal"""
+        print("")
         return True
 
     def do_create(self, arg):
