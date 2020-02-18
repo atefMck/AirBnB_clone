@@ -16,7 +16,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """Quit the console"""
+        """Quit the console
+        """
         return True
 
     def do_EOF(self, arg):
