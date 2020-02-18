@@ -16,18 +16,15 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """
-        Quit command to exit the program"""
+        """Quit the console"""
         return True
 
     def do_EOF(self, arg):
-        """
-        Quit command to exit the program"""
+        """Quit the console using EOF signal"""
         return True
 
     def do_create(self, arg):
-        """
-        Creates a new object"""
+        """Creates a new object"""
         if not arg:
             print("** class name missing **")
         if arg not in self.classes:
@@ -37,22 +34,21 @@ class HBNBCommand(cmd.Cmd):
             print(myobj.id)
             storage.save()
 
-    # def do_show(self, arg):
-    #     """Prints string repr of an instance"""
-    #     args = arg.split()
-    #     if not args:
-    #         print("** class name missing **")
-    #     else if args[0] not in self.classes:
-    #         print("** class doesn't exist **")
-    #     else if not args[1]:
-    #         print("** instance id missing **")
-    #     objects = storage.all()
-    #     for values in objects.values():
-    #         if values.__class__.__name__ == args[0] and values.id == args[1]:
-    #             print(v)
-    #             return
-    #     print("** no instance found **")
+    def do_show(self, arg):
+        """Prints string repr of an instance"""
+        args = arg.split()
+        if not args:
+            print("** class name missing **")
+        elif args[0] not in self.classes:
+            print("** class doesn't exist **")
+        elif not args[1]:
+            print("** instance id missing **")
+        objects = storage.all()
+        for values in objects.values():
+            if values.__class__.__name__ == args[0] and values.id == args[1]:
+                print(v)
+                return
+        print("** no instance found **")
 
-if __name__ == '__main__':
-    console = HBNBCommand()
-    console.cmdloop()
+console = HBNBCommand()
+console.cmdloop()
