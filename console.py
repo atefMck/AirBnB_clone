@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 class HBNBCommand(cmd.Cmd):
     """ Base console class """
 
-    prompt = "(hbtn) "
+    prompt = "(hbnb) "
     classes = {"BaseModel"}
 
     def emptyline(self):
