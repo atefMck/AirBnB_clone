@@ -181,6 +181,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("User")
         if arg == ".count()":
             print(self.getCount("User"))
+        if arg[0:5] == ".show":
+            args = "User " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "User " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "User " + arg[8:-1]
+            self.do_update(args)
 
     def do_Amenity(self, arg):
         """Amenity class method handling"""
@@ -188,6 +197,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("Amenity")
         if arg == ".count()":
             print(self.getCount("Amenity"))
+        if arg[0:5] == ".show":
+            args = "Amenity " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "Amenity " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "Amenity " + arg[8:-1]
+            self.do_update(args)
 
     def do_State(self, arg):
         """State class method handling"""
@@ -202,6 +220,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("Place")
         if arg == ".count()":
             print(self.getCount("Place"))
+        if arg[0:5] == ".show":
+            args = "Place " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "Place " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "Place " + arg[8:-1]
+            self.do_update(args)
 
     def do_Review(self, arg):
         """Review class method handling"""
@@ -209,6 +236,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("Review")
         if arg == ".count()":
             print(self.getCount("Review"))
+        if arg[0:5] == ".show":
+            args = "Review " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "Review " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "Review " + arg[8:-1]
+            self.do_update(args)
 
     def do_City(self, arg):
         """City class method handling"""
@@ -216,6 +252,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("City")
         if arg == ".count()":
             print(self.getCount("City"))
+        if arg[0:5] == ".show":
+            args = "City " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "City " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "City " + arg[8:-1]
+            self.do_update(args)
 
 
 console = HBNBCommand()
