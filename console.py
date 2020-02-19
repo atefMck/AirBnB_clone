@@ -3,13 +3,14 @@
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """ Base console class """
 
     prompt = "(hbnb) "
-    classes = {"BaseModel"}
+    classes = {"BaseModel", "User"}
 
     def emptyline(self):
         """Blank lines handling"""
@@ -21,6 +22,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, arg):
         """Quit the console using EOF signal"""
+        print("")
         return True
 
     def do_create(self, arg):
@@ -90,6 +92,7 @@ class HBNBCommand(cmd.Cmd):
             print(value)
 
     def do_update(self, arg):
+        """Updates an instance"""
         args = arg.split()
         if not args:
             print("** class name missing **")
