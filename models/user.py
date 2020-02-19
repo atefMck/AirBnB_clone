@@ -8,8 +8,8 @@ class User(BaseModel):
 
     email = ""
     password = ""
-    firstname = ""
-    lastname = ""
+    first_name = ""
+    last_name = ""
 
     def __init__(self, *args, **kwargs):
         """docstring for init method of User"""
