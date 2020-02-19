@@ -3,6 +3,8 @@
 
 import json
 import os
+from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage():
@@ -37,7 +39,6 @@ class FileStorage():
     def reload(self):
         """ reloads all objects from file """
 
-        from models.base_model import BaseModel
         if os.path.isfile(self.__file_path):
             with open(self.__file_path, 'r') as file:
                 json_data = json.load(file)
