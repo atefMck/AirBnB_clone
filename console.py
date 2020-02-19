@@ -213,6 +213,15 @@ class HBNBCommand(cmd.Cmd):
             self.do_all("State")
         if arg == ".count()":
             print(self.getCount("State"))
+        if arg[0:5] == ".show":
+            args = "State " + arg[6:-1]
+            self.do_show(args)
+        if arg[0:8] == ".destroy":
+            args = "State " + arg[9:-1]
+            self.do_destroy(args)
+        if arg[0:7] == ".update":
+            args = "State " + arg[8:-1]
+            self.do_update(args)
 
     def do_Place(self, arg):
         """Place class method handling"""
