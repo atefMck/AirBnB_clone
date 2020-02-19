@@ -7,13 +7,22 @@ from models.user import User
 from models.state import State
 from models.city import City
 from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
     """ Base console class """
 
     prompt = "(hbnb) "
-    classes = {"BaseModel", "User", "State", "City", "Amenity"}
+    classes = { "BaseModel",
+                "User",
+                "State",
+                "City",
+                "Amenity",
+                "Place",
+                "Review"
+              }
 
     def emptyline(self):
         """Blank lines handling"""
