@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 class State(BaseModel):
     """docstring for state class"""
-    
+
     name = ""
 
     def __init__(self, *args, **kwargs):

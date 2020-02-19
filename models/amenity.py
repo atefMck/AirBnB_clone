@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """docstring for Amenity class"""
-    
+
     name = ""
 
     def __init__(self, *args, **kwargs):
