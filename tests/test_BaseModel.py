@@ -19,3 +19,9 @@ class TestBaseModel(unittest.TestCase):
     def testLen(self):
         """ Test length of id """
         self.assertEqual(len(self.base.id), 36)
+
+    @unittest.expectedFailure
+    def testUnique(self):
+        """ Test if id is unique """
+        self.base1 = BaseModel()
+        self.assertEqual(self.base.id, self.base1.id)
