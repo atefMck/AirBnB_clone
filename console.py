@@ -174,6 +174,7 @@ class HBNBCommand(cmd.Cmd):
         if arg[0:7] == ".update":
             args = "BaseModel " + arg[8:-1]
             args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
     def do_User(self, arg):
@@ -190,6 +191,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "User " + arg[8:-1]
+            args = args.replace(",", "")
+            args = args.replace('"', "")
             self.do_update(args)
 
     def do_Amenity(self, arg):
@@ -206,6 +209,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "Amenity " + arg[8:-1]
+            args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
     def do_State(self, arg):
@@ -222,6 +227,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "State " + arg[8:-1]
+            args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
     def do_Place(self, arg):
@@ -238,6 +245,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "Place " + arg[8:-1]
+            args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
     def do_Review(self, arg):
@@ -254,6 +263,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "Review " + arg[8:-1]
+            args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
     def do_City(self, arg):
@@ -270,6 +281,8 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "City " + arg[8:-1]
+            args.replace(",", "")
+            args.replace('"', "")
             self.do_update(args)
 
 
