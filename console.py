@@ -40,8 +40,10 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new object"""
         if not arg:
             print("** class name missing **")
+            return
         if arg not in self.classes:
             print("** class doesn't exist **")
+            return
         else:
             myobj = eval(arg)()
             print(myobj.id)
@@ -90,17 +92,37 @@ class HBNBCommand(cmd.Cmd):
         """Shows all classes optionally refined with classname"""
         objects = storage.all()
         v = 0
+        i = 0
         if arg:
+            if len(objects) != 0:
+                print('["', end="")
             for value in objects.values():
                 if value.__class__.__name__ == arg:
-                    print(value)
+                    if i != 0:
+                        print('"', end="")
+                    print(value, end="")
+                    if i != len(objects.values()) - 1:
+                        print('", ', end="")
+                    i = i + 1
                     v = 1
+            if len(objects) != 0:
+                print('"]')
             if v == 0:
                 print("** class doesn't exist **")
                 return
             return
+        i = 0
+        if len(objects) != 0:
+            print('["', end="")
         for value in objects.values():
-            print(value)
+            if i != 0:
+                print('"', end="")
+            print(value, end="")
+            if i != len(objects.values()) - 1:
+                print('", ', end="")
+            i = i + 1
+        if len(objects) != 0:
+            print('"]')
 
     def do_update(self, arg):
         """Updates an instance"""

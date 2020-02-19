@@ -62,4 +62,4 @@ class FileStorage():
 
         restriction = {"created_at", "id", "updated_at"}
         if attr not in restriction:
-            setattr(self.__objects[key], attr, val)
+            setattr(self.__objects[key], attr, type(attr)(val))
