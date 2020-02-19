@@ -5,8 +5,9 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """docstring for Amenity class"""
+    
+    name = ""
 
     def __init__(self, *args, **kwargs):
         """docstring for init method of Amenity"""
-        super(Amenity, self).__init__(*args, **kwargs)
-        self.name = ""
+        super().__init__(*args, **kwargs)
