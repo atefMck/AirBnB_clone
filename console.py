@@ -173,6 +173,7 @@ class HBNBCommand(cmd.Cmd):
             self.do_destroy(args)
         if arg[0:7] == ".update":
             args = "BaseModel " + arg[8:-1]
+            args.replace(",", "")
             self.do_update(args)
 
     def do_User(self, arg):
