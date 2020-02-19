@@ -150,6 +150,42 @@ class HBNBCommand(cmd.Cmd):
             return
         print("** no instance found **")
 
+    def do_BaseModel(self, arg):
+        """BaseModel class method handling"""
+        if arg == ".all()":
+            self.do_all("BaseModel")
+
+    def do_User(self, arg):
+        """User class method handling"""
+        if arg == ".all()":
+            self.do_all("User")
+
+    def do_Amenity(self, arg):
+        """Amenity class method handling"""
+        if arg == ".all()":
+            self.do_all("Amenity")
+
+    def do_State(self, arg):
+        """State class method handling"""
+        if arg == ".all()":
+            self.do_all("State")
+
+    def do_Place(self, arg):
+        """Place class method handling"""
+        if arg == ".all()":
+            self.do_all("Place")
+
+    def do_Review(self, arg):
+        """Review class method handling"""
+        if arg == ".all()":
+            self.do_all("Review")
+
+    def do_City(self, arg):
+        """City class method handling"""
+        if arg == ".all()":
+            self.do_all("City")
+
+
 console = HBNBCommand()
 if __name__ == "__main__":
     console.cmdloop()
