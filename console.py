@@ -150,40 +150,63 @@ class HBNBCommand(cmd.Cmd):
             return
         print("** no instance found **")
 
+    def getCount(self, arg):
+        """Returns the number of instances of a class"""
+        count = 0
+        objects = storage.all()
+        for values in objects.values():
+            if values.__class__.__name__ == arg:
+                count = count + 1
+        return (count)
+
     def do_BaseModel(self, arg):
         """BaseModel class method handling"""
         if arg == ".all()":
             self.do_all("BaseModel")
+        if arg == ".count()":
+            print(self.getCount("BaseModel"))
 
     def do_User(self, arg):
         """User class method handling"""
         if arg == ".all()":
             self.do_all("User")
+        if arg == ".count()":
+            print(self.getCount("User"))
 
     def do_Amenity(self, arg):
         """Amenity class method handling"""
         if arg == ".all()":
             self.do_all("Amenity")
+        if arg == ".count()":
+            print(self.getCount("Amenity"))
 
     def do_State(self, arg):
         """State class method handling"""
         if arg == ".all()":
             self.do_all("State")
+        if arg == ".count()":
+            print(self.getCount("State"))
 
     def do_Place(self, arg):
         """Place class method handling"""
         if arg == ".all()":
             self.do_all("Place")
+        if arg == ".count()":
+            print(self.getCount("Place"))
 
     def do_Review(self, arg):
         """Review class method handling"""
         if arg == ".all()":
             self.do_all("Review")
+        if arg == ".count()":
+            print(self.getCount("Review"))
 
     def do_City(self, arg):
         """City class method handling"""
         if arg == ".all()":
             self.do_all("City")
+        if arg == ".count()":
+            print(self.getCount("City"))
 
 
 console = HBNBCommand()
