@@ -10,7 +10,7 @@ class User(BaseModel):
     password = ""
     firstname = ""
     lastname = ""
-    
+
     def __init__(self, *args, **kwargs):
         """docstring for init method of User"""
-        super(User, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
