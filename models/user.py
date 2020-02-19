@@ -8,7 +8,7 @@ class User(BaseModel):
     def __init__(self, *args, **kwargs):
         """docstring for init method of User"""
         super(User, self).__init__(*args, **kwargs)
-        self.email = ""
-        self.password = ""
-        self.firstname = ""
-        self.lastname = ""
+        email = ""
+        password = ""
+        firstname = ""
+        lastname = ""
