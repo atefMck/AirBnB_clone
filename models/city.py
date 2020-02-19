@@ -2,6 +2,7 @@
 """ This module contains the City class """
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """docstring for City class"""
 

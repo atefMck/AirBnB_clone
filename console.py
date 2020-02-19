@@ -15,14 +15,13 @@ class HBNBCommand(cmd.Cmd):
     """ Base console class """
 
     prompt = "(hbnb) "
-    classes = { "BaseModel",
-                "User",
-                "State",
-                "City",
-                "Amenity",
-                "Place",
-                "Review"
-              }
+    classes = {"BaseModel",
+               "User",
+               "State",
+               "City",
+               "Amenity",
+               "Place",
+               "Review"}
 
     def emptyline(self):
         """Blank lines handling"""

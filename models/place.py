@@ -2,12 +2,13 @@
 """ This module contains the Place class """
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """docstring for Place class"""
 
     def __init__(self, *args, **kwargs):
         """docstring for init method of Place"""
-        
+
         super(Place, self).__init__(*args, **kwargs)
         city_id = ""
         user_id = ""
