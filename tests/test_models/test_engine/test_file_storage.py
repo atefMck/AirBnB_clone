@@ -3,11 +3,10 @@
 Unit Test for filestorage
 """
 import unittest
+import models
 import os
-import json
+from models import storage
 from models.engine.file_storage import FileStorage
-from models.base_model import BaseModel
-from models.user import User
 
 
 class TestFileStorage(unittest.TestCase):
@@ -16,99 +15,72 @@ class TestFileStorage(unittest.TestCase):
     """
     def setUp(self):
         """
-        Sets up an instance of storage
+        Setup
         """
-        self.storage = FileStorage()
-        self.storage._refresh()
-        self.storage.reload()
+        self.ikea = FileStorage()
 
-    def testTheirs(self):
+    def tear_down(self):
         """
-        testcase
+        tear down
         """
-        my_model = BaseModel()
-        my_model.name = "Holberton"
-        my_model.my_number = 89
-        test_dict = my_model.to_dict()
-        new_model = BaseModel(**test_dict)
-        self.assertEqual(new_model.id, my_model.id)
+        if os.path.exists("file.json"):
+            try:
+                os.remove("file.json")
+            except BaseException:
+                pass
 
-    def testAll(self):
+    def test_file_storage(self):
         """
-        Tests if all returns a dict
+        test for filestorage
         """
-        dic = self.storage.all()
-        self.assertEqual(type(dic), dict)
+        self.assertFalse(hasattr(self.ikea, "fake_id"))
 
-    def testAllValue(self):
-        """
-        Tests al()
-        """
-        self.assertEqual(self.storage.all(), {})
 
-    def testSaveEmpty(self):
-        """
-        Tests if save wrote to the file an empty dict
-        """
-        self.storage.save()
-        with open("file.json", 'r', encoding="utf-8") as f:
-            self.r = f.read()
-            self.assertEqual(self.r, "{}")
+class TestDocumentation(unittest.TestCase):
+    """
+    class to test documentation
+    """
 
-    def testSave(self):
-        base = BaseModel()
-        pre_obj = self.storage.all()
-        self.storage.save()
-        after_obj = self.storage.all()
-        self.assertEqual(pre_obj, after_obj)
+    def test_doc_class(self):
+        """
+        test class
+        """
+        expected = ' filestorage class '
+        actual = FileStorage.__doc__
+        self.assertEqual(expected, actual)
 
-    def testNew(self):
+    def test_all(self):
         """
-        tests storage
+        test all function
         """
-        self.base = BaseModel()
-        self.base.id = '121212'
-        self.storage.new(self.base)
-        test_dic = self.storage.all()
-        self.assertTrue(test_dic['BaseModel.121212'])
+        expected = ' defining all '
+        actual = FileStorage.all.__doc__
+        self.assertEqual(expected, actual)
 
-    @unittest.expectedFailure
-    def testNew_class_BaseModel(self):
+    def test_new(self):
         """
-        tests new
+        test new function
         """
-        self.storage.new([])
+        expected = ' defining new '
+        actual = FileStorage.new.__doc__
+        self.assertEqual(expected, actual)
 
-    def testReload(self):
+    def test_save(self):
         """
-        test reload
+        test class
         """
-        self.test_dictionary = {"BaseModel.121212": {"id": 121212}}
-        self.test_dictionary["BaseModel.221212"] = {"id": 121212}
-        with open("file.json", 'w+') as f:
-            json.dump(self.test_dictionary, f)
-        self.storage.reload()
-        self.assertEqual(len(self.storage.all()), 2)
+        expected = ' defining save '
+        actual = FileStorage.save.__doc__
+        self.assertEqual(expected, actual)
 
-    def testReload_no_existing_file(self):
+    def test_reload(self):
         """
-        tests reload with no existing file
+        test reload function
         """
-        if os.path.isfile('file.json'):
-            os.remove('file.json')
-        self.storage.reload()
-        self.assertFalse(os.path.isfile('file.json'))
+        expected = ' defining reload '
+        actual = FileStorage.reload.__doc__
+        self.assertEqual(expected, actual)
 
-    def testPrivate(self):
-        """
-        test if exist a private variables
-        """
-        with self.assertRaises(AttributeError):
-            FileStorage.__file_path
 
-    def testPrivateO(self):
-        """
-        test if exist a private variables
-        """
-        with self.assertRaises(AttributeError):
-            FileStorage.__objects
+if __name__ == '__main__':
+    unittest.main()
