@@ -1,0 +1,89 @@
+.container .places {
+  margin-top: 30px;
+}
+
+.container .places h1 {
+  font-size: 30px;
+}
+
+.container .places ul {
+  text-align: center;
+}
+
+.container .places ul li {
+  display: inline-block;
+}
+
+.container .places ul li article {
+  width: 390px;
+  margin: 20px;
+  padding: 20px;
+  border: solid 1px #FF5A5F;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.container .places ul li article h2 {
+  font-size: 30px;
+}
+
+.container .places .price_by_night {
+  border: solid 4px #FF5A5F;
+  border-radius: 100%;
+  display: inline-block;
+  min-width: 60px;
+  height: 60px;
+  position: relative;
+  left: 160px;
+  bottom: 40px;
+  text-align: center;
+}
+
+.container .places .price_by_night p {
+  color: #FF5A5F;
+  font-size: 30px;
+  padding-top: 12px;
+}
+
+.container .information {
+  height: 80px;
+  border-top: solid 1px #DDDDDD;
+  border-bottom: solid 1px #DDDDDD;
+  text-align: center;
+}
+
+.container .information ul li {
+  width: 100px;
+  display: inline-block;
+}
+
+.container .information ul li .icon_group {
+  background-image: url("../images/icon_group.png");
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.container .information ul li .icon_bed {
+  background-image: url("../images/icon_bed.png");
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.container .information ul li .icon_bath {
+  background-image: url("../images/icon_bath.png");
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.container .user {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.container .description {
+  text-align: left;
+  margin-top: 5px;
+}

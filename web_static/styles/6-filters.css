@@ -14,7 +14,7 @@
   width: 20%;
   border-radius: 4px;
   margin-top: 11px;
-  position: fixed;
+  position: absolute;
   right: 30px;
 }
 
@@ -33,12 +33,22 @@
   width: 25%;
   display: inline-block;
 }
+
 .locpop {
   display: none;
   position: absolute;
 }
 
 .locations:hover .locpop {
+  display: block;
+}
+
+.amepop {
+  display: none;
+  position: absolute;
+}
+
+.amenities:hover .amepop {
   display: block;
 }
 
